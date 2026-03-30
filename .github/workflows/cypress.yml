@@ -15,11 +15,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Start Vite app
+      - name: Start app
         run: npm run dev &
-        
+
       - name: Wait for app
         run: npx wait-on http://localhost:5173
 
       - name: Run Cypress Tests
-        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+        run: npx cypress run
